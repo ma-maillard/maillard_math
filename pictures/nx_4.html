@@ -1,0 +1,155 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 600px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#97c2fc", "degree": 1, "id": "Fran\u00e7ois_Arago", "label": "Fran\u00e7ois_Arago", "shape": "dot", "size": 10, "type": "P"}, {"color": "#97c2fc", "degree": 12, "id": "\u00c9cole_Polytechnique", "label": "\u00c9cole_Polytechnique", "shape": "dot", "size": 10, "type": "O"}, {"color": "#97c2fc", "degree": 3, "id": "Sim\u00e9on_Denis_Poisson", "label": "Sim\u00e9on_Denis_Poisson", "shape": "dot", "size": 10, "type": "P"}, {"color": "#97c2fc", "degree": 1, "id": "Bureau_des_Longitudes", "label": "Bureau_des_Longitudes", "shape": "dot", "size": 10, "type": "O"}, {"color": "#97c2fc", "degree": 1, "id": "\u00c9cole_Sp\u00e9ciale_Militaire_de_Saint-Cyr", "label": "\u00c9cole_Sp\u00e9ciale_Militaire_de_Saint-Cyr", "shape": "dot", "size": 10, "type": "O"}, {"color": "#97c2fc", "degree": 1, "id": "Th\u00e9odore_Olivier", "label": "Th\u00e9odore_Olivier", "shape": "dot", "size": 10, "type": "P"}, {"color": "#97c2fc", "degree": 1, "id": "Charles_Julien_Brianchon", "label": "Charles_Julien_Brianchon", "shape": "dot", "size": 10, "type": "P"}, {"color": "#97c2fc", "degree": 1, "id": "Gaspard-Gustave_de_Coriolis", "label": "Gaspard-Gustave_de_Coriolis", "shape": "dot", "size": 10, "type": "P"}, {"color": "#97c2fc", "degree": 1, "id": "Pierre_Joseph_\u00c9tienne_Finck", "label": "Pierre_Joseph_\u00c9tienne_Finck", "shape": "dot", "size": 10, "type": "P"}, {"color": "#97c2fc", "degree": 1, "id": "Jean-Baptiste_Biot", "label": "Jean-Baptiste_Biot", "shape": "dot", "size": 10, "type": "P"}, {"color": "#97c2fc", "degree": 1, "id": "\u00c9mile_L\u00e9ger", "label": "\u00c9mile_L\u00e9ger", "shape": "dot", "size": 10, "type": "P"}, {"color": "#97c2fc", "degree": 1, "id": "Giovanni_Plana", "label": "Giovanni_Plana", "shape": "dot", "size": 10, "type": "P"}, {"color": "#97c2fc", "degree": 1, "id": "Jean-Victor_Poncelet", "label": "Jean-Victor_Poncelet", "shape": "dot", "size": 10, "type": "P"}, {"color": "#97c2fc", "degree": 1, "id": "Michel_Chasles", "label": "Michel_Chasles", "shape": "dot", "size": 10, "type": "P"}, {"color": "#97c2fc", "degree": 2, "id": "Pierre-Dominique_Bazaine", "label": "Pierre-Dominique_Bazaine", "shape": "dot", "size": 10, "type": "P"}, {"color": "#97c2fc", "degree": 1, "id": "French_Army", "label": "French_Army", "shape": "dot", "size": 10, "type": "O"}, {"color": "#97c2fc", "degree": 9, "id": "Trinity_College,_Cambridge", "label": "Trinity_College,_Cambridge", "shape": "dot", "size": 10, "type": "O"}, {"color": "#97c2fc", "degree": 1, "id": "Charles_Terrot", "label": "Charles_Terrot", "shape": "dot", "size": 10, "type": "P"}, {"color": "#97c2fc", "degree": 1, "id": "George_Peacock", "label": "George_Peacock", "shape": "dot", "size": 10, "type": "P"}, {"color": "#97c2fc", "degree": 1, "id": "Israel_Lyons", "label": "Israel_Lyons", "shape": "dot", "size": 10, "type": "P"}, {"color": "#97c2fc", "degree": 1, "id": "John_Cranke", "label": "John_Cranke", "shape": "dot", "size": 10, "type": "P"}, {"color": "#97c2fc", "degree": 1, "id": "John_Hudson_(mathematician)", "label": "John_Hudson_(mathematician)", "shape": "dot", "size": 10, "type": "P"}, {"color": "#97c2fc", "degree": 1, "id": "Samuel_Hunter_Christie", "label": "Samuel_Hunter_Christie", "shape": "dot", "size": 10, "type": "P"}, {"color": "#97c2fc", "degree": 1, "id": "Stephen_Whisson", "label": "Stephen_Whisson", "shape": "dot", "size": 10, "type": "P"}, {"color": "#97c2fc", "degree": 2, "id": "Thomas_Jones_(mathematician)", "label": "Thomas_Jones_(mathematician)", "shape": "dot", "size": 10, "type": "P"}, {"color": "#97c2fc", "degree": 1, "id": "Thomas_Postlethwaite", "label": "Thomas_Postlethwaite", "shape": "dot", "size": 10, "type": "P"}, {"color": "#97c2fc", "degree": 1, "id": "John_Herschel", "label": "John_Herschel", "shape": "dot", "size": 10, "type": "P"}, {"color": "#97c2fc", "degree": 2, "id": "St_John\u0027s_College,_Cambridge", "label": "St_John\u0027s_College,_Cambridge", "shape": "dot", "size": 10, "type": "O"}, {"color": "#97c2fc", "degree": 1, "id": "Charles_University", "label": "Charles_University", "shape": "dot", "size": 10, "type": "O"}, {"color": "#97c2fc", "degree": 6, "id": "Joseph_Johann_von_Littrow", "label": "Joseph_Johann_von_Littrow", "shape": "dot", "size": 10, "type": "P"}, {"color": "#97c2fc", "degree": 3, "id": "Andreas_von_Ettingshausen", "label": "Andreas_von_Ettingshausen", "shape": "dot", "size": 10, "type": "P"}, {"color": "#97c2fc", "degree": 2, "id": "Vienna_University_of_Technology", "label": "Vienna_University_of_Technology", "shape": "dot", "size": 10, "type": "O"}, {"color": "#97c2fc", "degree": 3, "id": "University_of_Vienna", "label": "University_of_Vienna", "shape": "dot", "size": 10, "type": "O"}, {"color": "#97c2fc", "degree": 1, "id": "University_of_Innsbruck", "label": "University_of_Innsbruck", "shape": "dot", "size": 10, "type": "O"}, {"color": "#97c2fc", "degree": 1, "id": "Jagiellonian_University", "label": "Jagiellonian_University", "shape": "dot", "size": 10, "type": "O"}, {"color": "#97c2fc", "degree": 1, "id": "Buda", "label": "Buda", "shape": "dot", "size": 10, "type": "O"}, {"color": "#97c2fc", "degree": 2, "id": "Nikolai_Brashman", "label": "Nikolai_Brashman", "shape": "dot", "size": 10, "type": "P"}, {"color": "#97c2fc", "degree": 1, "id": "Kazan_State_University", "label": "Kazan_State_University", "shape": "dot", "size": 10, "type": "O"}, {"color": "#97c2fc", "degree": 1, "id": "Vienna_Observatory", "label": "Vienna_Observatory", "shape": "dot", "size": 10, "type": "O"}, {"color": "#97c2fc", "degree": 6, "id": "University_of_G\u00f6ttingen", "label": "University_of_G\u00f6ttingen", "shape": "dot", "size": 10, "type": "O"}, {"color": "#97c2fc", "degree": 3, "id": "Carl_Friedrich_Gauss", "label": "Carl_Friedrich_Gauss", "shape": "dot", "size": 10, "type": "P"}, {"color": "#97c2fc", "degree": 1, "id": "Christoph_Gudermann", "label": "Christoph_Gudermann", "shape": "dot", "size": 10, "type": "P"}, {"color": "#97c2fc", "degree": 2, "id": "Farkas_Bolyai", "label": "Farkas_Bolyai", "shape": "dot", "size": 10, "type": "P"}, {"color": "#97c2fc", "degree": 2, "id": "Johann_Christian_Martin_Bartels", "label": "Johann_Christian_Martin_Bartels", "shape": "dot", "size": 10, "type": "P"}, {"color": "#97c2fc", "degree": 1, "id": "Johann_Friedrich_Pfaff", "label": "Johann_Friedrich_Pfaff", "shape": "dot", "size": 10, "type": "P"}, {"color": "#97c2fc", "degree": 1, "id": "Karl_Heinrich_Gr\u00e4ffe", "label": "Karl_Heinrich_Gr\u00e4ffe", "shape": "dot", "size": 10, "type": "P"}, {"color": "#97c2fc", "degree": 1, "id": "University_of_Jena", "label": "University_of_Jena", "shape": "dot", "size": 10, "type": "O"}, {"color": "#97c2fc", "degree": 2, "id": "University_of_Helmstedt", "label": "University_of_Helmstedt", "shape": "dot", "size": 10, "type": "O"}, {"color": "#97c2fc", "degree": 1, "id": "Braunschweig_University_of_Technology", "label": "Braunschweig_University_of_Technology", "shape": "dot", "size": 10, "type": "O"}, {"color": "#97c2fc", "degree": 1, "id": "Edinburgh_University", "label": "Edinburgh_University", "shape": "dot", "size": 10, "type": "O"}, {"color": "#97c2fc", "degree": 3, "id": "James_Ivory_(mathematician)", "label": "James_Ivory_(mathematician)", "shape": "dot", "size": 10, "type": "P"}, {"color": "#97c2fc", "degree": 1, "id": "Dundee_Academy", "label": "Dundee_Academy", "shape": "dot", "size": 10, "type": "O"}, {"color": "#97c2fc", "degree": 1, "id": "John_West_(mathematician)", "label": "John_West_(mathematician)", "shape": "dot", "size": 10, "type": "P"}, {"color": "#97c2fc", "degree": 3, "id": "University_of_St_Andrews", "label": "University_of_St_Andrews", "shape": "dot", "size": 10, "type": "O"}, {"color": "#97c2fc", "degree": 1, "id": "Nicolas_Vilant", "label": "Nicolas_Vilant", "shape": "dot", "size": 10, "type": "P"}]);
+                  edges = new vis.DataSet([{"birth_year": 1786, "from": "Fran\u00e7ois_Arago", "periode": "1700_1800", "relationship": "almaMater", "to": "\u00c9cole_Polytechnique", "width": 1}, {"birth_year": 1781, "from": "Sim\u00e9on_Denis_Poisson", "periode": "1700_1800", "relationship": "institution", "to": "Bureau_des_Longitudes", "width": 1}, {"birth_year": 1781, "from": "Sim\u00e9on_Denis_Poisson", "periode": "1700_1800", "relationship": "institution", "to": "\u00c9cole_Sp\u00e9ciale_Militaire_de_Saint-Cyr", "width": 1}, {"birth_year": 1781, "from": "Sim\u00e9on_Denis_Poisson", "periode": "1700_1800", "relationship": "almaMater", "to": "\u00c9cole_Polytechnique", "width": 1}, {"birth_year": 1793, "from": "Th\u00e9odore_Olivier", "periode": "1700_1800", "relationship": "almaMater", "to": "\u00c9cole_Polytechnique", "width": 1}, {"birth_year": 1783, "from": "Charles_Julien_Brianchon", "periode": "1700_1800", "relationship": "almaMater", "to": "\u00c9cole_Polytechnique", "width": 1}, {"birth_year": 1792, "from": "Gaspard-Gustave_de_Coriolis", "periode": "1700_1800", "relationship": "almaMater", "to": "\u00c9cole_Polytechnique", "width": 1}, {"birth_year": 1797, "from": "Pierre_Joseph_\u00c9tienne_Finck", "periode": "1700_1800", "relationship": "almaMater", "to": "\u00c9cole_Polytechnique", "width": 1}, {"birth_year": 1774, "from": "Jean-Baptiste_Biot", "periode": "1700_1800", "relationship": "almaMater", "to": "\u00c9cole_Polytechnique", "width": 1}, {"birth_year": 1795, "from": "\u00c9mile_L\u00e9ger", "periode": "1700_1800", "relationship": "almaMater", "to": "\u00c9cole_Polytechnique", "width": 1}, {"birth_year": 1781, "from": "\u00c9cole_Polytechnique", "periode": "1700_1800", "relationship": "almaMater", "to": "Giovanni_Plana", "width": 1}, {"birth_year": 1788, "from": "\u00c9cole_Polytechnique", "periode": "1700_1800", "relationship": "almaMater", "to": "Jean-Victor_Poncelet", "width": 1}, {"birth_year": 1793, "from": "\u00c9cole_Polytechnique", "periode": "1700_1800", "relationship": "almaMater", "to": "Michel_Chasles", "width": 1}, {"birth_year": 1786, "from": "\u00c9cole_Polytechnique", "periode": "1700_1800", "relationship": "almaMater", "to": "Pierre-Dominique_Bazaine", "width": 1}, {"birth_year": 1786, "from": "French_Army", "periode": "1700_1800", "relationship": "institution", "to": "Pierre-Dominique_Bazaine", "width": 1}, {"birth_year": 1790, "from": "Trinity_College,_Cambridge", "periode": "1700_1800", "relationship": "almaMater", "to": "Charles_Terrot", "width": 1}, {"birth_year": 1791, "from": "Trinity_College,_Cambridge", "periode": "1700_1800", "relationship": "almaMater", "to": "George_Peacock", "width": 1}, {"birth_year": 1739, "from": "Trinity_College,_Cambridge", "periode": "1700_1800", "relationship": "almaMater", "to": "Israel_Lyons", "width": 1}, {"birth_year": 1746, "from": "Trinity_College,_Cambridge", "periode": "1700_1800", "relationship": "almaMater", "to": "John_Cranke", "width": 1}, {"birth_year": 1773, "from": "Trinity_College,_Cambridge", "periode": "1700_1800", "relationship": "almaMater", "to": "John_Hudson_(mathematician)", "width": 1}, {"birth_year": 1784, "from": "Trinity_College,_Cambridge", "periode": "1700_1800", "relationship": "almaMater", "to": "Samuel_Hunter_Christie", "width": 1}, {"birth_year": 1710, "from": "Trinity_College,_Cambridge", "periode": "1700_1800", "relationship": "institution", "to": "Stephen_Whisson", "width": 1}, {"birth_year": 1756, "from": "Trinity_College,_Cambridge", "periode": "1700_1800", "relationship": "institution", "to": "Thomas_Jones_(mathematician)", "width": 1}, {"birth_year": 1731, "from": "Trinity_College,_Cambridge", "periode": "1700_1800", "relationship": "institution", "to": "Thomas_Postlethwaite", "width": 1}, {"birth_year": 1792, "from": "John_Herschel", "periode": "1700_1800", "relationship": "almaMater", "to": "St_John\u0027s_College,_Cambridge", "width": 1}, {"birth_year": 1756, "from": "St_John\u0027s_College,_Cambridge", "periode": "1700_1800", "relationship": "almaMater", "to": "Thomas_Jones_(mathematician)", "width": 1}, {"birth_year": 1781, "from": "Charles_University", "periode": "1700_1800", "relationship": "almaMater", "to": "Joseph_Johann_von_Littrow", "width": 1}, {"birth_year": 1796, "from": "Andreas_von_Ettingshausen", "periode": "1700_1800", "relationship": "institution", "to": "Vienna_University_of_Technology", "width": 1}, {"birth_year": 1796, "from": "Andreas_von_Ettingshausen", "periode": "1700_1800", "relationship": "almaMater", "to": "University_of_Vienna", "width": 1}, {"birth_year": 1796, "from": "Andreas_von_Ettingshausen", "periode": "1700_1800", "relationship": "institution", "to": "University_of_Innsbruck", "width": 1}, {"birth_year": 1781, "from": "Jagiellonian_University", "periode": "1700_1800", "relationship": "institution", "to": "Joseph_Johann_von_Littrow", "width": 1}, {"birth_year": 1781, "from": "Buda", "periode": "1700_1800", "relationship": "institution", "to": "Joseph_Johann_von_Littrow", "width": 1}, {"birth_year": 1781, "from": "University_of_Vienna", "periode": "1700_1800", "relationship": "institution", "to": "Joseph_Johann_von_Littrow", "width": 1}, {"birth_year": 1796, "from": "University_of_Vienna", "periode": "1700_1800", "relationship": "almaMater", "to": "Nikolai_Brashman", "width": 1}, {"birth_year": 1781, "from": "Kazan_State_University", "periode": "1700_1800", "relationship": "institution", "to": "Joseph_Johann_von_Littrow", "width": 1}, {"birth_year": 1781, "from": "Joseph_Johann_von_Littrow", "periode": "1700_1800", "relationship": "institution", "to": "Vienna_Observatory", "width": 1}, {"birth_year": 1796, "from": "Vienna_University_of_Technology", "periode": "1700_1800", "relationship": "almaMater", "to": "Nikolai_Brashman", "width": 1}, {"birth_year": 1777, "from": "University_of_G\u00f6ttingen", "periode": "1700_1800", "relationship": "institution", "to": "Carl_Friedrich_Gauss", "width": 1}, {"birth_year": 1798, "from": "University_of_G\u00f6ttingen", "periode": "1700_1800", "relationship": "almaMater", "to": "Christoph_Gudermann", "width": 1}, {"birth_year": 1775, "from": "University_of_G\u00f6ttingen", "periode": "1700_1800", "relationship": "almaMater", "to": "Farkas_Bolyai", "width": 1}, {"birth_year": 1769, "from": "University_of_G\u00f6ttingen", "periode": "1700_1800", "relationship": "almaMater", "to": "Johann_Christian_Martin_Bartels", "width": 1}, {"birth_year": 1765, "from": "University_of_G\u00f6ttingen", "periode": "1700_1800", "relationship": "almaMater", "to": "Johann_Friedrich_Pfaff", "width": 1}, {"birth_year": 1799, "from": "University_of_G\u00f6ttingen", "periode": "1700_1800", "relationship": "almaMater", "to": "Karl_Heinrich_Gr\u00e4ffe", "width": 1}, {"birth_year": 1775, "from": "University_of_Jena", "periode": "1700_1800", "relationship": "almaMater", "to": "Farkas_Bolyai", "width": 1}, {"birth_year": 1777, "from": "University_of_Helmstedt", "periode": "1700_1800", "relationship": "almaMater", "to": "Carl_Friedrich_Gauss", "width": 1}, {"birth_year": 1769, "from": "University_of_Helmstedt", "periode": "1700_1800", "relationship": "almaMater", "to": "Johann_Christian_Martin_Bartels", "width": 1}, {"birth_year": 1777, "from": "Braunschweig_University_of_Technology", "periode": "1700_1800", "relationship": "almaMater", "to": "Carl_Friedrich_Gauss", "width": 1}, {"birth_year": 1765, "from": "Edinburgh_University", "periode": "1700_1800", "relationship": "almaMater", "to": "James_Ivory_(mathematician)", "width": 1}, {"birth_year": 1765, "from": "Dundee_Academy", "periode": "1700_1800", "relationship": "almaMater", "to": "James_Ivory_(mathematician)", "width": 1}, {"birth_year": 1756, "from": "John_West_(mathematician)", "periode": "1700_1800", "relationship": "almaMater", "to": "University_of_St_Andrews", "width": 1}, {"birth_year": 1737, "from": "Nicolas_Vilant", "periode": "1700_1800", "relationship": "almaMater", "to": "University_of_St_Andrews", "width": 1}, {"birth_year": 1765, "from": "James_Ivory_(mathematician)", "periode": "1700_1800", "relationship": "almaMater", "to": "University_of_St_Andrews", "width": 1}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>

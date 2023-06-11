@@ -1,0 +1,155 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 600px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#97c2fc", "degree": 1, "id": "Ovidio_Montalbani", "label": "Ovidio_Montalbani", "shape": "dot", "size": 10, "type": "P"}, {"color": "#97c2fc", "degree": 2, "id": "Universit\u00e0_di_Bologna", "label": "Universit\u00e0_di_Bologna", "shape": "dot", "size": 10, "type": "O"}, {"color": "#97c2fc", "degree": 2, "id": "Domenico_Guglielmini", "label": "Domenico_Guglielmini", "shape": "dot", "size": 10, "type": "P"}, {"color": "#97c2fc", "degree": 3, "id": "University_of_Padua", "label": "University_of_Padua", "shape": "dot", "size": 10, "type": "O"}, {"color": "#97c2fc", "degree": 1, "id": "Jacopo_Riccati", "label": "Jacopo_Riccati", "shape": "dot", "size": 10, "type": "P"}, {"color": "#97c2fc", "degree": 1, "id": "Thomas_Bartholin", "label": "Thomas_Bartholin", "shape": "dot", "size": 10, "type": "P"}, {"color": "#97c2fc", "degree": 1, "id": "Robert_Smith_(mathematician)", "label": "Robert_Smith_(mathematician)", "shape": "dot", "size": 10, "type": "P"}, {"color": "#97c2fc", "degree": 4, "id": "Trinity_College,_Cambridge", "label": "Trinity_College,_Cambridge", "shape": "dot", "size": 10, "type": "O"}, {"color": "#97c2fc", "degree": 1, "id": "Roger_Cotes", "label": "Roger_Cotes", "shape": "dot", "size": 10, "type": "P"}, {"color": "#97c2fc", "degree": 1, "id": "John_Pell_(mathematician)", "label": "John_Pell_(mathematician)", "shape": "dot", "size": 10, "type": "P"}, {"color": "#97c2fc", "degree": 1, "id": "Francis_Willughby", "label": "Francis_Willughby", "shape": "dot", "size": 10, "type": "P"}, {"color": "#97c2fc", "degree": 1, "id": "University_of_Leiden", "label": "University_of_Leiden", "shape": "dot", "size": 10, "type": "O"}, {"color": "#97c2fc", "degree": 3, "id": "David_Gregory_(mathematician)", "label": "David_Gregory_(mathematician)", "shape": "dot", "size": 10, "type": "P"}, {"color": "#97c2fc", "degree": 1, "id": "Marischal_College", "label": "Marischal_College", "shape": "dot", "size": 10, "type": "O"}, {"color": "#97c2fc", "degree": 1, "id": "University_of_Aberdeen", "label": "University_of_Aberdeen", "shape": "dot", "size": 10, "type": "O"}, {"color": "#97c2fc", "degree": 3, "id": "Gilles_de_Roberval", "label": "Gilles_de_Roberval", "shape": "dot", "size": 10, "type": "P"}, {"color": "#97c2fc", "degree": 1, "id": "University_of_Paris", "label": "University_of_Paris", "shape": "dot", "size": 10, "type": "O"}, {"color": "#97c2fc", "degree": 1, "id": "Gervais_College", "label": "Gervais_College", "shape": "dot", "size": 10, "type": "O"}, {"color": "#97c2fc", "degree": 1, "id": "Royal_College_of_France", "label": "Royal_College_of_France", "shape": "dot", "size": 10, "type": "O"}, {"color": "#97c2fc", "degree": 1, "id": "University_of_Pisa", "label": "University_of_Pisa", "shape": "dot", "size": 10, "type": "O"}, {"color": "#97c2fc", "degree": 2, "id": "Giovanni_Ceva", "label": "Giovanni_Ceva", "shape": "dot", "size": 10, "type": "P"}, {"color": "#97c2fc", "degree": 1, "id": "Jesuit", "label": "Jesuit", "shape": "dot", "size": 10, "type": "O"}]);
+                  edges = new vis.DataSet([{"birth_year": 1601, "from": "Ovidio_Montalbani", "periode": "1600_1700", "relationship": "almaMater", "to": "Universit\u00e0_di_Bologna", "width": 1}, {"birth_year": 1655, "from": "Universit\u00e0_di_Bologna", "periode": "1600_1700", "relationship": "institution", "to": "Domenico_Guglielmini", "width": 1}, {"birth_year": 1655, "from": "University_of_Padua", "periode": "1600_1700", "relationship": "institution", "to": "Domenico_Guglielmini", "width": 1}, {"birth_year": 1676, "from": "University_of_Padua", "periode": "1600_1700", "relationship": "almaMater", "to": "Jacopo_Riccati", "width": 1}, {"birth_year": 1616, "from": "University_of_Padua", "periode": "1600_1700", "relationship": "almaMater", "to": "Thomas_Bartholin", "width": 1}, {"birth_year": 1689, "from": "Robert_Smith_(mathematician)", "periode": "1600_1700", "relationship": "institution", "to": "Trinity_College,_Cambridge", "width": 1}, {"birth_year": 1682, "from": "Roger_Cotes", "periode": "1600_1700", "relationship": "almaMater", "to": "Trinity_College,_Cambridge", "width": 1}, {"birth_year": 1611, "from": "John_Pell_(mathematician)", "periode": "1600_1700", "relationship": "almaMater", "to": "Trinity_College,_Cambridge", "width": 1}, {"birth_year": 1635, "from": "Francis_Willughby", "periode": "1600_1700", "relationship": "almaMater", "to": "Trinity_College,_Cambridge", "width": 1}, {"birth_year": 1659, "from": "University_of_Leiden", "periode": "1600_1700", "relationship": "almaMater", "to": "David_Gregory_(mathematician)", "width": 1}, {"birth_year": 1659, "from": "Marischal_College", "periode": "1600_1700", "relationship": "almaMater", "to": "David_Gregory_(mathematician)", "width": 1}, {"birth_year": 1659, "from": "David_Gregory_(mathematician)", "periode": "1600_1700", "relationship": "almaMater", "to": "University_of_Aberdeen", "width": 1}, {"birth_year": 1602, "from": "Gilles_de_Roberval", "periode": "1600_1700", "relationship": "institution", "to": "University_of_Paris", "width": 1}, {"birth_year": 1602, "from": "Gilles_de_Roberval", "periode": "1600_1700", "relationship": "institution", "to": "Gervais_College", "width": 1}, {"birth_year": 1602, "from": "Gilles_de_Roberval", "periode": "1600_1700", "relationship": "institution", "to": "Royal_College_of_France", "width": 1}, {"birth_year": 1647, "from": "University_of_Pisa", "periode": "1600_1700", "relationship": "almaMater", "to": "Giovanni_Ceva", "width": 1}, {"birth_year": 1647, "from": "Giovanni_Ceva", "periode": "1600_1700", "relationship": "almaMater", "to": "Jesuit", "width": 1}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>
