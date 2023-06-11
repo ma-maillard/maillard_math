@@ -1,0 +1,685 @@
+,occupation,effectif,classes
+0,Mathematics,1617,math
+1,Mathematician,457,math
+2,Physics,99,sci_nat
+3,Astronomy,68,sci_nat
+4,Computer science,45,ing_info
+5,Physicist,40,sci_nat
+6,Astronomer,36,sci_nat
+7,Applied mathematics,31,math
+8,Statistics,29,math
+9,Mathematical physics,24,math
+10,Topology,22,math
+11,Geometry,22,math
+12,Logic,21,philo
+13,Functional analysis,19,math
+14,Mathematical analysis,19,math
+15,Combinatorics,16,math
+16,Mathematical logic,15,math
+17,Computer Science,15,ing_info
+18,Philosophy,14,philo
+19,Algebraic geometry,14,math
+20,Engineering,13,ing_info
+21,Professor,13,autre
+22,Economics,13,sci_hum
+23,Differential geometry,12,math
+24,Mechanics,12,sci_nat
+25,Partial differential equation,12,math
+26,Politician,11,autre
+27,Number theory,11,math
+28,Algebra,10,math
+29,Group theory,10,math
+30,Statistician,9,math
+31,Fluid dynamics,9,sci_nat
+32,Complex analysis,9,math
+33,Engineer,9,ing_info
+34,Educator,9,autre
+35,Cryptography,9,ing_info
+36,Control theory,8,ing_info
+37,Theoretical physics,8,sci_nat
+38,Philosopher,8,philo
+39,Numerical analysis,8,math
+40,Theoretical computer science,8,ing_info
+41,Probability theory,8,math
+42,Chemistry,7,sci_nat
+43,Scientist,7,
+44,Several complex variables,7,math
+45,Real analysis,7,math
+46,Cryptanalysis,7,ing_info
+47,Computer scientist,7,ing_info
+48,Partial differential equations,7,math
+49,Game theory,7,math
+50,Fluid mechanics,7,sci_nat
+51,Probability,7,math
+52,Author,6,art
+53,Information theory,6,ing_info
+54,Calculus of variations,6,math
+55,Biology,6,sci_nat
+56,Meteorology,6,sci_nat
+57,Applied Mathematics,6,math
+58,Natural philosophy,5,philo
+59,Electrical engineering,5,ing_info
+60,Mathematical economics,5,sci_hum
+61,Historian,5,sci_hum
+62,Mathematical Physics,5,sci_nat
+63,Mathematical statistics,5,math
+64,Astrology,5,
+65,Medicine,5,sci_nat
+66,Physician,5,sci_nat
+67,History of mathematics,5,sci_hum
+68,History of science,5,sci_hum
+69,Dynamical systems,5,sci_nat
+70,Graph theory,5,math
+71,Linguistics,5,sci_hum
+72,Economist,5,sci_hum
+73,Natural history,4,sci_hum
+74,Bioinformatics,4,
+75,Inventor,4,autre
+76,Differential equation,4,math
+77,Potential theory,4,math
+78,Jesuit,4,theo
+79,Model theory,4,math
+80,Coding theory,4,ing_info
+81,Cryptologist,4,ing_info
+82,Fluid Dynamics,4,sci_nat
+83,Algebraic number theory,4,math
+84,Queueing theory,4,math
+85,Optimization (mathematics),4,math
+86,Poet,4,art
+87,Operations research,4,math
+88,Cartographer,4,sci_hum
+89,Optics,4,sci_nat
+90,Teacher,4,autre
+91,Astrologer,4,sci_nat
+92,Astrophysics,4,sci_nat
+93,Cybernetics,4,ing_info
+94,Geophysics,4,sci_nat
+95,Geometric measure theory,3,math
+96,Programmer,3,ing_info
+97,Category theory,3,math
+98,Neuroscience,3,sci_nat
+99,Graph Theory,3,math
+100,Continuum mechanics,3,sci_nat
+101,Nonprofit organization,3,
+102,Harmonic analysis,3,math
+103,Celestial mechanics,3,sci_nat
+104,Set theory,3,math
+105,Number Theory,3,math
+106,Elliptic partial differential equation,3,math
+107,Botanist,3,sci_nat
+108,Measure theory,3,math
+109,Architecture,3,art
+110,Entrepreneur,3,autre
+111,Ordinary differential equation,3,math
+112,Geodesy,3,sci_nat
+113,Analysis,3,math
+114,Geography,3,sci_hum
+115,Geology,3,sci_nat
+116,Algebraic graph theory,3,math
+117,Philosophy of mathematics,3,philo
+118,Epistemology,3,philo
+119,Mathematics education,3,autre
+120,Acoustics,3,sci_nat
+121,Aerodynamics,3,sci_nat
+122,Mathematical modelling,3,math
+123,Integral equation,3,math
+124,Actuary,3,math
+125,Abstract algebra,3,math
+126,Sociologist,3,sci_hum
+127,Writer,3,art
+128,Partial Differential Equations,3,math
+129,Pianist,2,art
+130,Numerical Analysis,2,math
+131,Plasma (physics),2,sci_nat
+132,Continued fraction,2,math
+133,Cosmology,2,sci_nat
+134,Philology,2,philo
+135,External ballistics,2,sci_nat
+136,Ramsey Theory,2,math
+137,Particle physics,2,sci_nat
+138,Random graph,2,math
+139,Discrete geometry,2,math
+140,Discrete Mathematics,2,math
+141,Political economy,2,sci_hum
+142,Discrete mathematics,2,math
+143,Diplomat,2,autre
+144,Priest,2,theo
+145,Diophantine analysis,2,math
+146,Mathematical Logic,2,math
+147,Dynamical Systems,2,sci_nat
+148,Ecology,2,sci_nat
+149,Econometrics,2,sci_hum
+150,Differential equations,2,math
+151,Geometric analysis,2,math
+152,Geometric topology,2,math
+153,Psychologist,2,sci_hum
+154,Psychology,2,sci_hum
+155,Operator Theory,2,math
+156,Education,2,autre
+157,Geographer,2,sci_hum
+158,Operator theory,2,math
+159,Operations Research,2,math
+160,Electromagnetism,2,sci_nat
+161,Mathematical Finance,2,sci_hum
+162,Partial Differential Equation,2,math
+163,Botany,2,sci_nat
+164,Hydraulics,2,sci_nat
+165,Classical mechanics,2,sci_nat
+166,Low-dimensional topology,2,math
+167,Algebraic topology,2,math
+168,Translator,2,autre
+169,Analytic number theory,2,math
+170,Chemist,2,sci_nat
+171,Linguist,2,sci_hum
+172,Thermodynamics,2,sci_nat
+173,Signal processing,2,ing_info
+174,Linear elasticity,2,sci_nat
+175,Theology,2,theo
+176,Architect,2,art
+177,Calculus of variation,2,math
+178,Sociology,2,sci_hum
+179,Monk,2,theo
+180,Law,2,autre
+181,Businessperson,2,
+182,Statistical mechanics,2,math
+183,Minister (Christianity),2,theo
+184,Banach space,2,math
+185,Jurist,2,autre
+186,Symplectic geometry,2,math
+187,Mineralogy,2,sci_nat
+188,Hydrodynamics,2,sci_nat
+189,Mathematical psychology,2,sci_hum
+190,Aeronautics,2,sci_nat
+191,Combinatorics on words,2,math
+192,Representation theory,2,math
+193,Computer engineering,2,ing_info
+194,Researcher,2,
+195,Accountant,2,
+196,Mathematical biology,2,sci_nat
+197,Computational mechanics,2,sci_nat
+198,Mathematical finance,2,sci_hum
+199,Aerospace Engineering,2,ing_info
+200,Aerospace engineering,2,ing_info
+201,Surveying,2,autre
+202,Alchemy,2,sci_nat
+203,Algebraic Geometry,2,math
+204,Navigation,2,autre
+205,Machine learning,2,ing_info
+206,Painting,1,art
+207,Merchant,1,autre
+208,Mathematical physicist,1,sci_nat
+209,Orthogonal functions,1,math
+210,Military Engineering,1,ing_info
+211,P-adic analysis,1,math
+212,Meteorologist,1,sci_nat
+213,Ophthalmology,1,sci_nat
+214,Metaphysic,1,philo
+215,Member of Parliament,1,autre
+216,Mathematical sciences,1,math
+217,Papyrologist,1,
+218,Mathematical model,1,math
+219,Mathematical optimization,1,math
+220,Mechanician,1,ing_info
+221,Origami,1,
+222,Mechanical Engineering,1,ing_info
+223,Paleoclimatology,1,sci_nat
+224,Optimization,1,math
+225,Ornithology,1,sci_nat
+226,Nuclear physics,1,sci_nat
+227,Mining,1,
+228,Mysticism,1,theo
+229,Nautical science,1,
+230,Ontology,1,philo
+231,Oceanography,1,sci_nat
+232,Numismatics,1,
+233,Numerical mathematics,1,math
+234,Papyrology,1,
+235,Network science,1,math
+236,Newspaper,1,
+237,Non-linear,1,math
+238,Noncommutative algebraic geometry,1,math
+239,Noncommutative geometry,1,math
+240,Numerical integration,1,math
+241,Nonlinear,1,math
+242,Nonlinear Systems,1,math
+243,Numerical computation,1,math
+244,Nonlinear acoustics,1,sci_nat
+245,Nonlinear programming,1,ing_info
+246,Naturopathy,1,autre
+247,Muslim,1,theo
+248,Mining engineer,1,ing_info
+249,Musicology,1,autre
+250,Modular form,1,math
+251,Moduli spaces,1,math
+252,Novelist,1,art
+253,Molecular Biology,1,sci_nat
+254,Monarch,1,
+255,Operator algebra,1,math
+256,Monodromy,1,math
+257,Moral philosophy,1,philo
+258,Moscow State University,1,
+259,Multi-criteria decision analysis,1,math
+260,Multidimensional geometry,1,math
+261,Multiobjective optimization,1,math
+262,Music,1,art
+263,Music educator,1,art
+264,Music theorist,1,art
+265,Musical acoustics,1,art
+266,Musician,1,art
+267,Network (mathematics),1,math
+268,4th World Scout Jamboree,1,
+269,Parapsychology,1,sci_hum
+270,Special functions,1,math
+271,Symmetry,1,math
+272,Sustainable energy,1,sci_nat
+273,Supervisory Board,1,
+274,Subfactor,1,math
+275,Structural mechanics,1,ing_info
+276,Stochastic processes,1,math
+277,Stochastic geometry,1,math
+278,Stochastic differential equation,1,math
+279,Stochastic analysis,1,math
+280,Stochastic Processes,1,math
+281,Stereochemistry,1,sci_nat
+282,Statistical shape analysis,1,math
+283,Spectral theory,1,math
+284,Special relativity,1,sci_nat
+285,Space scientist,1,sci_nat
+286,Partial differential operator,1,math
+287,Sociolinguistics,1,sci_hum
+288,Social statistics,1,sci_hum
+289,Social reformer,1,
+290,Social network analysis,1,
+291,Social issues,1,
+292,Sinology,1,
+293,Set-valued analysis,1,math
+294,Set-theoretic topology,1,math
+295,Semigroup theory,1,math
+296,Semidefinite programming,1,ing_info
+297,Semantics,1,autre
+298,Seismology,1,sci_nat
+299,Secret Intelligence Service,1,
+300,Sculpture,1,art
+301,Synthetic geometry,1,math
+302,System Theory,1,autre
+303,Systems Biology,1,sci_nat
+304,Systems Ecology,1,sci_nat
+305,Zoologist,1,sci_nat
+306,Writing,1,art
+307,World War II,1,
+308,Welfare economics,1,sci_hum
+309,Web search,1,ing_info
+310,Von Neumann algebra,1,math
+311,Video game developer,1,ing_info
+312,Urban planner,1,autre
+313,University of Virginia,1,
+314,University Professor,1,
+315,Typography,1,
+316,Trigonometry,1,math
+317,Trigonometric series,1,math
+318,Transportation Economics,1,sci_hum
+319,Trade association,1,
+320,Topological graph theory,1,math
+321,Topological dynamics,1,math
+322,Topography,1,sci_nat
+323,Theory of numbers,1,math
+324,Theory of elasticity,1,math
+325,Theoretical linguistics,1,sci_hum
+326,Theoretical computer scientist,1,ing_info
+327,Theologian,1,theo
+328,Tessellation,1,math
+329,Terrestrial Magnetism,1,sci_nat
+330,Tensor calculus,1,math
+331,Systems theory,1,math
+332,Systems Theory,1,math
+333,Systems Engineering,1,ing_info
+334,Scriptwriter,1,art
+335,Screenwriter,1,art
+336,Scientometrics,1,
+337,Quantum graph,1,math
+338,Quantum Mechanics,1,sci_nat
+339,Quadratic forms,1,math
+340,Puzzles,1,
+341,Pure mathematics,1,math
+342,Pure Mathematics,1,math
+343,Pundit,1,
+344,Psychometrics,1,
+345,Psychiatry,1,sci_hum
+346,Provost (education),1,
+347,Princeton University,1,
+348,Population genetics,1,sci_nat
+349,Popular science,1,
+350,Polymath,1,
+351,Polygraph (author),1,
+352,Politics,1,autre
+353,Political science,1,sci_hum
+354,Political leader,1,
+355,Political Sociology,1,sci_hum
+356,Playwright,1,
+357,Plasticity (physics),1,sci_nat
+358,Plant physiology,1,sci_nat
+359,Physiologist,1,sci_nat
+360,Physical oceanography,1,sci_nat
+361,Physical cosmology,1,sci_nat
+362,Philosophy of logic,1,philo
+363,Philosophy of Science,1,philo
+364,Philologist,1,philo
+365,Pedagogy,1,sci_hum
+366,Pattern recognition,1,
+367,Quantum chaos,1,math
+368,Quantum group,1,math
+369,Scientific computing,1,ing_info
+370,Quantum mechanics,1,sci_nat
+371,Scientific Computation,1,
+372,Sciences,1,
+373,Science policy,1,
+374,Science Communication,1,
+375,Science,1,
+376,School Teacher,1,
+377,Scholar,1,
+378,SETI,1,
+379,Rutgers University,1,
+380,Romanian literature,1,autre
+381,Robotics,1,ing_info
+382,Riobamba,1,
+383,Ring (mathematics),1,math
+384,Riemann–Hilbert problem,1,math
+385,Riemannian Geometry,1,math
+386,Riemann hypothesis,1,math
+387,Rheology,1,sci_nat
+388,Research,1,
+389,Representation Theory,1,
+390,Renaissance humanist,1,
+391,Renaissance Humanism,1,
+392,Religious study,1,theo
+393,Religious studies,1,theo
+394,Religious Minister,1,
+395,Regent,1,
+396,Rector (academia),1,
+397,Random matrix theory,1,math
+398,Random field,1,math
+399,Race relations,1,
+400,Professor emeritus,1,
+401,Hypergeometric series,1,
+402,Mathematic,1,math
+403,Complex Networks,1,
+404,Combinatorial optimization,1,math
+405,Combinatorial topology,1,math
+406,Commutative algebra,1,math
+407,Commutative ring,1,math
+408,Comparative anatomy,1,sci_nat
+409,Complex Analysis,1,math
+410,Complex system,1,
+411,Combinatorial design,1,
+412,Composer,1,art
+413,Computational biology,1,sci_hum
+414,Computational complexity theory,1,math
+415,Computational linguistics,1,autre
+416,Computational number theory,1,math
+417,Computer Scientist,1,ing_info
+418,Combinatorial game theory,1,math
+419,Combinatorial Optimization,1,math
+420,Cellular Biology,1,sci_nat
+421,Chronobiology,1,sci_nat
+422,Chaos Theory,1,math
+423,Chaos theory,1,math
+424,Chemical engineering,1,sci_nat
+425,Chess,1,
+426,Chief executive officer,1,
+427,Choreographer,1,art
+428,Civil engineering,1,ing_info
+429,Cognitive science,1,sci_nat
+430,Civil service,1,
+431,Class field theory,1,math
+432,Classics,1,
+433,Climatology,1,sci_nat
+434,Coastal engineering,1,ing_info
+435,Cognitive Science,1,sci_nat
+436,Computer Security,1,ing_info
+437,Computer Simulation,1,ing_info
+438,Computer networks,1,ing_info
+439,Developmental Biology,1,sci_nat
+440,Data communication,1,ing_info
+441,Data privacy,1,ing_info
+442,Database theory,1,ing_info
+443,Deputy (legislator),1,
+444,Descriptive geometry,1,math
+445,Development economics,1,sci_hum
+446,Dialectologist,1,sci_hum
+447,Computer programmer,1,ing_info
+448,Differential Geometry,1,math
+449,Differential Topology,1,math
+450,Differential algebra,1,math
+451,Differential calculus,1,math
+452,Differential form,1,math
+453,Digital art,1,art
+454,Crystallography,1,sci_nat
+455,Cryptology,1,autre
+456,Cryptographer,1,autre
+457,Critic,1,
+458,Cosmographer,1,sci_nat
+459,Convex optimization,1,math
+460,Control Theory,1,math
+461,Continuum Mechanics,1,sci_nat
+462,Construction worker,1,autre
+463,Constitutive equation,1,math
+464,Conics,1,math
+465,Conic Sections,1,math
+466,Conformal field theory,1,math
+467,Configuration (geometry),1,math
+468,Conductor (music),1,art
+469,Computing,1,ing_info
+470,Computer sciences,1,ing_info
+471,Cellular automaton,1,ing_info
+472,Celestial Mechanics,1,sci_nat
+473,Math education,1,
+474,Applied mathematician,1,math
+475,Analytic philosophy,1,philo
+476,Antenna (radio),1,ing_info
+477,Anthology,1,
+478,Anthropologist,1,sci_hum
+479,Antiquary,1,
+480,Applied chemistry,1,sci_nat
+481,Approximation,1,math
+482,Almost periodic function,1,math
+483,Approximation theory,1,math
+484,Archaeologist,1,sci_hum
+485,Archaeology,1,sci_hum
+486,Archdeacon,1,theo
+487,Architectural theory,1,art
+488,Arithmetic geometry,1,math
+489,Analytic Number Theory,1,math
+490,Algorithmic information theory,1,math
+491,Cartography,1,sci_hum
+492,Actuarial mathematics,1,math
+493,Academic,1,
+494,Academic Administration,1,
+495,Acoustic streaming,1,
+496,Activism,1,
+497,Activist,1,
+498,Actor,1,art
+499,Actuarial science,1,
+500,Algebraic group,1,math
+501,Adirondack Mountains,1,
+502,Aeronautical engineering,1,ing_info
+503,African-American history,1,sci_hum
+504,Algebraic Number Theory,1,math
+505,Algebraic Topology,1,math
+506,Algebraic combinatorics,1,math
+507,Army officer,1,
+508,Artificial Intelligence,1,ing_info
+509,Artin approximation theorem,1,math
+510,Byzantine studies,1,sci_hum
+511,Biometrics,1,sci_nat
+512,Biophysics,1,sci_nat
+513,Board of directors,1,
+514,Boolean algebra (structure),1,math
+515,Botanics,1,sci_nat
+516,British People,1,
+517,C*-algebra,1,math
+518,Artist,1,art
+519,Cadastral,1,
+520,Cadastre,1,
+521,Calculus of Variations,1,math
+522,Cancer research,1,sci_nat
+523,Canon law of the Catholic Church,1,theo
+524,Captain (nautical),1,
+525,Biofluid,1,sci_nat
+526,Bifurcation theory,1,math
+527,Bibliometrics,1,
+528,Bertelsmann,1,
+529,Bayesian statistics,1,math
+530,Banach algebras,1,math
+531,Axiomatic set theory,1,math
+532,Aviation,1,autre
+533,Avadhanam,1,
+534,Automorphic form,1,math
+535,Automatic control,1,
+536,Automata theory,1,
+537,Atomic physics,1,sci_nat
+538,Atmospheric dynamics,1,sci_nat
+539,Asymptotic expansion,1,math
+540,Astrophysicist,1,sci_nat
+541,Astrobiology,1,sci_nat
+542,Diophantine geometry,1,math
+543,Discrimination,1,
+544,Distributed computing,1,ing_info
+545,Ichthyology,1,sci_nat
+546,Hydromagnetics,1,sci_nat
+547,Hydrostatic equilibrium,1,sci_nat
+548,Hyperbolic geometry,1,math
+549,Hyperbolic partial differential equations,1,math
+550,Hypercomplex analysis,1,math
+551,Abolitionism in the United States,1,
+552,Iconography,1,sci_hum
+553,Hydroacoustics,1,sci_nat
+554,Idealism,1,
+555,Illusionist,1,
+556,Immunobiology,1,sci_nat
+557,Informatics (academic field),1,ing_info
+558,Information Science,1,ing_info
+559,Insurance,1,
+560,Hydrographer,1,
+561,Humanist,1,philo
+562,Drug design,1,
+563,Homology (mathematics),1,math
+564,Historians,1,sci_hum
+565,Historical linguistics,1,sci_hum
+566,History,1,sci_hum
+567,History of logic,1,sci_hum
+568,History of math,1,sci_hum
+569,Homological algebra,1,math
+570,Homotopy theory,1,math
+571,Humanism,1,philo
+572,Homotopy type theory,1,math
+573,Horologist,1,ing_info
+574,Horology,1,ing_info
+575,Hot air ballooning,1,
+576,Human Computer,1,ing_info
+577,Human computer,1,ing_info
+578,Integral (mathematics),1,math
+579,Integral geometry,1,math
+580,Intellectual history,1,sci_hum
+581,Ludovica Military Academy,1,
+582,Lie groups,1,
+583,Linear Algebra,1,math
+584,Linear algebra,1,math
+585,Liquid crystal,1,sci_nat
+586,Logic in Computer Science,1,ing_info
+587,Logician,1,philo
+588,Magic square,1,
+589,Inti Films,1,
+590,Magnetism,1,sci_nat
+591,Magnetohydrodynamics,1,sci_nat
+592,Magyar Cserkészszövetség,1,
+593,Markov chain,1,math
+594,Markovian process,1,math
+595,Materials Science,1,
+596,Lie algebras,1,math
+597,Lie algebra,1,math
+598,Legislator,1,autre
+599,Lecturer,1,autre
+600,Lebesgue integration,1,math
+601,Lawyer,1,autre
+602,Lattice (order),1,
+603,Laplace transform,1,math
+604,Landlord,1,
+605,Land Surveyor,1,
+606,Knot theory,1,math
+607,Knot polynomial,1,math
+608,Kleinian group,1,math
+609,Kharkiv Human Rights Protection Group,1,
+610,Jurisprudence,1,autre
+611,Journalist,1,autre
+612,Iowa State University,1,
+613,Higher education,1,
+614,Hermeticism,1,
+615,Hedge fund,1,
+616,Film,1,art
+617,Eugenics,1,
+618,Evolutionary biology,1,
+619,Explorer,1,
+620,Extremal graph theory,1,math
+621,Extreme value theory,1,math
+622,Farmer,1,autre
+623,Film criticism,1,autre
+624,Finite model theory,1,math
+625,Film theory,1,art
+626,Finance,1,sci_hum
+627,Financial analyst,1,sci_hum
+628,Finite element method,1,math
+629,Finite geometry,1,math
+630,Finite group,1,math
+631,Euclidean geometry,1,math
+632,Ethnomathematics,1,math
+633,Essayist,1,art
+634,Ergodic theory,1,math
+635,Epigraphy,1,sci_hum
+636,Epidemiology,1,sci_nat
+637,Electronic engineering,1,ing_info
+638,Electronic Engineering,1,ing_info
+639,Electricity,1,sci_nat
+640,Electrical engineer,1,ing_info
+641,Electrical Engineering,1,ing_info
+642,Electrical,1,
+643,Economic theory,1,sci_hum
+644,Economic history,1,sci_hum
+645,Economic Development,1,sci_hum
+646,Earth sciences,1,sci_nat
+647,Dynamic programming,1,ing_info
+648,Finite group theory,1,math
+649,Finite strain theory,1,math
+650,Harvard University,1,
+651,George Washington University,1,
+652,Geodesist,1,sci_nat
+653,Geodynamics,1,sci_nat
+654,Geometric group theory,1,math
+655,Geometrical optics,1,sci_nat
+656,Geometry of numbers,1,math
+657,Geophysicist,1,sci_nat
+658,German studies,1,sci_hum
+659,Formal language,1,
+660,Germanist,1,sci_hum
+661,Glaciology,1,sci_nat
+662,Graphics,1,
+663,Greek language,1,sci_hum
+664,Group Theory,1,math
+665,Harmonic analysis (mathematics),1,
+666,Genomics,1,sci_nat
+667,Genetics,1,sci_nat
+668,General topology,1,math
+669,General relativity,1,sci_nat
+670,Galois theory,1,math
+671,Fuzzy mathematics,1,math
+672,Functional integration,1,math
+673,Functional equations,1,math
+674,Functional equation,1,math
+675,Function space,1,math
+676,Friar,1,theo
+677,Freemason,1,autre
+678,Franciscan priest,1,theo
+679,Fourier analysis,1,math
+680,Foundations of mathematics,1,math
+681,Foundations of geometry,1,math
+682,Formal language theory,1,sci_hum
+683,Zoology,1,sci_nat
